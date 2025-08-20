@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI-Powered Blogging Platform Design System
+All colors MUST be HSL. Focus on professional, content-focused design.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Clean whites and deep grays */
+    --background: 0 0% 100%;
+    --foreground: 223 25% 15%;
+
+    /* Card system - Subtle elevation */
+    --card: 0 0% 100%;
+    --card-foreground: 223 25% 15%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 223 25% 15%;
+
+    /* Primary - Professional blue */
+    --primary: 221 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 221 100% 45%;
+
+    /* Secondary - Light gray backgrounds */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 223 25% 15%;
+
+    /* Muted - Content backgrounds */
+    --muted: 220 15% 97%;
+    --muted-foreground: 220 8% 46%;
+
+    /* Accent - Vibrant highlights */
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Error states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 100% 50%;
+
+    /* Blog-specific colors */
+    --editor-bg: 220 15% 98%;
+    --sidebar-bg: 220 12% 95%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 100% 50%), hsl(221 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(221 100% 50%) 0%, hsl(142 71% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(220 13% 91% / 0.4);
+    --shadow-md: 0 4px 12px hsl(220 13% 91% / 0.6);
+    --shadow-lg: 0 8px 32px hsl(220 13% 91% / 0.8);
+    --shadow-primary: 0 4px 20px hsl(221 100% 50% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Professional dark theme */
+    --background: 223 25% 7%;
+    --foreground: 220 15% 95%;
+
+    --card: 223 25% 10%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 223 25% 10%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 221 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 221 100% 50%;
+
+    --secondary: 223 20% 15%;
+    --secondary-foreground: 220 15% 95%;
+
+    --muted: 223 20% 12%;
+    --muted-foreground: 220 8% 65%;
+
+    --accent: 142 71% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 223 20% 20%;
+    --input: 223 20% 20%;
+    --ring: 221 100% 55%;
+
+    /* Dark mode blog-specific */
+    --editor-bg: 223 20% 8%;
+    --sidebar-bg: 223 20% 12%;
+    --success: 142 71% 50%;
+    --warning: 38 92% 55%;
+    --info: 199 89% 53%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 100% 55%), hsl(221 100% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(221 100% 55%) 0%, hsl(142 71% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(223 25% 10%) 0%, hsl(223 20% 15%) 100%);
+    
+    /* Dark shadows */
+    --shadow-sm: 0 1px 2px hsl(223 25% 5% / 0.4);
+    --shadow-md: 0 4px 12px hsl(223 25% 5% / 0.6);
+    --shadow-lg: 0 8px 32px hsl(223 25% 5% / 0.8);
+    --shadow-primary: 0 4px 20px hsl(221 100% 55% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer components {
+  /* Prose styles for blog content */
+  .prose-blog {
+    @apply text-foreground leading-7;
+  }
+  
+  .prose-blog h1 {
+    @apply text-3xl font-bold mb-6 text-foreground;
+  }
+  
+  .prose-blog h2 {
+    @apply text-2xl font-semibold mb-4 text-foreground;
+  }
+  
+  .prose-blog h3 {
+    @apply text-xl font-medium mb-3 text-foreground;
+  }
+  
+  .prose-blog p {
+    @apply mb-4 text-muted-foreground;
+  }
+  
+  .prose-blog code {
+    @apply bg-muted px-2 py-1 rounded text-sm font-mono;
+  }
+  
+  .prose-blog pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+}
